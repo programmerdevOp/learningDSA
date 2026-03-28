@@ -5,7 +5,26 @@ public class findSecondLargestElement {
         int[] arr  = {3,2,4,5,2};
         int n = arr.length;
         int ans = findSecondLargest(arr,n);
+        int secondApproach = findSecondLargestSecondApproach(arr, n);
         System.out.println("Second Largest Element: " + ans);
+        System.out.println("get second largest by second approach: " + secondApproach);
+    }
+
+    private static int findSecondLargestSecondApproach(int[] arr, int n) {
+
+        int largest = arr[0];
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int idx = 1; idx < n; idx++) {
+            if(arr[idx] > largest){
+                secondLargest = largest;
+                largest = arr[idx];
+            } else if (arr[idx] < largest && arr[idx] > secondLargest){
+                secondLargest = arr[idx];
+            }
+        }
+
+        return secondLargest;
     }
 
     static int findLargest(int[] arr,int n){
