@@ -1,5 +1,7 @@
 package arrayLearning;
 
+import java.util.Arrays;
+
 public class findSecondLargestElement {
     public static void main(String[] args) {
         int[] arr  = {3,2,4,5,2};
@@ -8,6 +10,9 @@ public class findSecondLargestElement {
         //int secondApproach = findSecondLargestSecondApproach(arr, n);
         //System.out.println("Second Largest Element: " + ans);
         //System.out.println("get second largest by second approach: " + secondApproach);
+
+        int ans = findSecondLargestSortingApproach(arr, n);
+        System.out.println("Second Largest: "+ ans);
     }
 
     private static int findSecondLargestSecondApproach(int[] arr, int n) {
@@ -51,5 +56,19 @@ public class findSecondLargestElement {
         }
 
         return secondMaxi;
+    }
+
+    static int findSecondLargestSortingApproach(int[] arr, int n){
+        Arrays.sort(arr);
+        int largest = arr[n-1];
+        int secondLargest = Integer.MIN_VALUE;
+        for(int idx = n-2; idx >= 0;--idx){
+            if(arr[idx] != largest){
+                secondLargest = arr[idx];
+                break;
+            }
+        }
+
+        return secondLargest;
     }
 }
