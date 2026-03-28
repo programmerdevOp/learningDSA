@@ -4,10 +4,10 @@ public class findSecondLargestElement {
     public static void main(String[] args) {
         int[] arr  = {3,2,4,5,2};
         int n = arr.length;
-        int ans = findSecondLargest(arr,n);
-        int secondApproach = findSecondLargestSecondApproach(arr, n);
-        System.out.println("Second Largest Element: " + ans);
-        System.out.println("get second largest by second approach: " + secondApproach);
+        //int ans = findSecondLargest(arr,n);
+        //int secondApproach = findSecondLargestSecondApproach(arr, n);
+        //System.out.println("Second Largest Element: " + ans);
+        //System.out.println("get second largest by second approach: " + secondApproach);
     }
 
     private static int findSecondLargestSecondApproach(int[] arr, int n) {
