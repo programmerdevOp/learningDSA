@@ -1,10 +1,12 @@
 package arrayLearning;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class RemoveDuplicateFromSortedArray {
     public static void main(String[] args){
-        int[] arr = {1,1,2,2,2,3,3,4,5,5,6};
+        int[] arr = {1,1,2,2,2,3,3};
         int n = arr.length;
 
         int[] ansArr = removeDuplicate(arr, n);
@@ -16,6 +18,9 @@ public class RemoveDuplicateFromSortedArray {
 
             System.out.println(ansArr[i]);
         }
+
+        int ans = removeDuplicates(arr);
+        System.out.println("count: " +ans);
     }
 
     static int[] removeDuplicate(int[] arr, int n){
@@ -41,5 +46,29 @@ public class RemoveDuplicateFromSortedArray {
         }
 
         return Arrays.copyOf(ansArr, j);
+    }
+
+    static int removeDuplicates(int[] nums) {
+        int n = nums.length;
+        //int[] ansArr = new int[n];
+        List<Integer> arrList = new ArrayList<>();
+
+        int i = 0;
+        int j = 0;
+        arrList.add(nums[i]);
+        i++;
+        j++;
+        while(i < n){
+            if(nums[i] != arrList.get(j-1)){
+                arrList.add(nums[i]);
+                i++;
+                j++;
+            }else if(nums[i] == arrList.get(j-1)){
+                i++;
+            }
+        }
+
+        int count = arrList.size();
+        return count;
     }
 }
