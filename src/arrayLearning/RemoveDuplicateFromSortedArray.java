@@ -2,6 +2,7 @@ package arrayLearning;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class RemoveDuplicateFromSortedArray {
@@ -19,8 +20,11 @@ public class RemoveDuplicateFromSortedArray {
             System.out.println(ansArr[i]);
         }
 
-        int ans = removeDuplicates(arr);
-        System.out.println("count: " +ans);
+        //int ans = removeDuplicates(arr);
+        //System.out.println("count: " +ans);
+
+        int count = removeDuplicatedValue(arr);
+        System.out.println("Third Approach "+ count);
     }
 
     static int[] removeDuplicate(int[] arr, int n){
@@ -70,5 +74,22 @@ public class RemoveDuplicateFromSortedArray {
 
         int count = arrList.size();
         return count;
+    }
+
+    static int removeDuplicatedValue(int[] nums){
+        HashSet<Integer> map = new HashSet<>();
+
+        int idx = 0;
+        https://spankbanglive.com/Hot-Haney77
+        for(int num : nums){
+            if(!map.contains(num)){
+                map.add(num);
+
+                nums[idx] = num;
+                idx++;
+            }
+        }
+
+        return idx;
     }
 }
