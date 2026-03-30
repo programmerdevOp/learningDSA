@@ -77,6 +77,7 @@ public class RemoveDuplicateFromSortedArray {
     }
 
     static int removeDuplicatedValue(int[] nums){
+        System.out.println("Hey");
         HashSet<Integer> map = new HashSet<>();
 
         int idx = 0;

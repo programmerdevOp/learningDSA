@@ -11,6 +11,7 @@ public class CheckIfArrayIsSorted {
     }
 
     static boolean checkSorted(int[] nums, int n){
+        System.out.println("Inside function");
         for(int i = 0; i < n-1; i++){
             if(nums[i] < nums[i+1]){
                 //continue
