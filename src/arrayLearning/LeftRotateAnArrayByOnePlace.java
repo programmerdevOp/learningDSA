@@ -4,10 +4,12 @@ public class LeftRotateAnArrayByOnePlace {
     public static void main(String[] args) {
         int[] nums = {1,2,3,4,5};
         // after left rotate -> [2,3,4,5,1]
-        leftRotateByOne(nums, nums.length);
+//        leftRotateByOne(nums, nums.length);
+        leftRotateBetter(nums, nums.length);
+
 
         for(int num: nums){
-            System.out.print(nums+" ");
+            System.out.print(num+" ");
         }
     }
 
@@ -38,6 +40,15 @@ public class LeftRotateAnArrayByOnePlace {
     }
 
     private static void leftRotateBetter(int[] nums, int n){
-        //[]
+        //[1,2,3,4,5]
+        int firstElem = nums[0];
+
+        for(int i=1;i<n;i++){
+            nums[i-1] = nums[i];
+        }
+
+        nums[n-1] = firstElem;
+
+        return;
     }
 }
