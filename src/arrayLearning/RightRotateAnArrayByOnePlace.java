@@ -6,10 +6,11 @@ public class RightRotateAnArrayByOnePlace {
         int n = arr.length;
         // problem - hame array ko left rotate karna hai mtlb last element first par aa jayeega rotate hoke aur baki
         // forward push ho jayenge -> [5,1,2,3,4]
-        RightRotateByOnePlace(arr, n);
-
+        //RightRotateByOnePlace(arr, n);
+        int[] nums = {1,2,3,4,5};
+        rightRotateBetter(nums, nums.length);
         for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
+            System.out.print(nums[i]+" ");
         }
 
     }
@@ -40,5 +41,17 @@ public class RightRotateAnArrayByOnePlace {
             m++;
         }
 
+    }
+
+    private static  void rightRotateBetter(int[] nums, int n){
+        // [1,2,3,4,5]
+        int  lastElem = nums[n-1];
+        // [
+        for(int i = n-2; i >= 0; i--){
+            nums[i+1] = nums[i];
+        }
+        nums[0] = lastElem;
+
+        return;
     }
 }
