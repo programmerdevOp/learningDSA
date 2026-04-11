@@ -9,6 +9,8 @@ public class UnionOfTwoSortedArrays {
     }
 
     public static void unionOfSortedArr(int[] nums1, int[] nums2){
+        // yeh code to chala nhi dhang se
+        
         int i = 0;
         int j = 0;
         int k = 0;
