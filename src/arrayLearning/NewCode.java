@@ -1,5 +1,7 @@
 package arrayLearning;
 
+import java.util.Arrays;
+
 class NewCode {
 
     int[][][] dp = new int[301][27][27];
@@ -52,5 +54,9 @@ class NewCode {
                 Arrays.fill(dp[i][j], -1);
 
         return solve(word, 0, 26, 26);
+    }
+
+    public static void main(String[] args) {
+
     }
 }
