@@ -39,5 +39,6 @@ public class GenericsLearning {
         Dog d = new Dog();
         a.walk();
         d.walk();
+        d.bark();
     }
 }
