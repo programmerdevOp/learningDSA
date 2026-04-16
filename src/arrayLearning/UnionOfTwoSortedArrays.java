@@ -1,11 +1,52 @@
 package arrayLearning;
 
+import java.util.*;
+
 public class UnionOfTwoSortedArrays {
     public static void main(String[] args) {
-        int[] nums1 = {1,1,2,3,4,5};
+        int[] nums1 = {1,2,3,4,5};
         int[] nums2 = {2,5,6};
 
-        unionOfSortedArr(nums1, nums2);
+        //unionOfSortedArr(nums1, nums2);
+//        dusriApproachForUnion(nums1,nums2);
+        setWaliApproach(nums1, nums2);
+    }
+
+    private static void setWaliApproach(int[] nums1, int[] nums2) {
+        Set<Integer> set = new HashSet<>();
+
+        for(int num: nums1){
+            set.add(num);
+        }
+
+        for(int num: nums2){
+            set.add(num);
+        }
+
+        List<Integer> arr = new ArrayList<>(set);
+        Collections.sort(arr);
+
+        System.out.println(arr);
+    }
+
+    private static void dusriApproachForUnion(int[] nums1, int[] nums2) {
+        List<Integer> arrList = new ArrayList<>();
+
+        for(int num1: nums1){
+            if(!arrList.contains(num1)){
+                arrList.add(num1);
+            }
+        }
+
+        for(int num2: nums2){
+            if(!arrList.contains(num2)){
+                arrList.add(num2);
+            }
+        }
+
+        Collections.sort(arrList);
+
+        System.out.println(arrList);
     }
 
     public static void unionOfSortedArr(int[] nums1, int[] nums2){
