@@ -8,6 +8,7 @@ class Solution {
 
             for (String s : dictionary) {
                 int diff = 0;
+                System.out.println("hey");
 
                 for (int i = 0; i < query.length(); i++) {
                     if (query.charAt(i) != s.charAt(i)) {
