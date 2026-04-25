@@ -53,6 +53,7 @@ public class FindMissingNumber {
 
         int n = arr.length + 1;
         int expectedSum = (n * (n + 1)) / 2;
+        // 12 * 12 + 1 / 2
 
         int missing = expectedSum - arrSum;
         System.out.println("Missing number: " + missing);
