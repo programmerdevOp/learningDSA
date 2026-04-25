@@ -1,5 +1,8 @@
 package springPractice.com.sumit.coupling.looseCoupling;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Solution {
     public List<String> twoEditWords(String[] queries, String[] dictionary) {
         List<String> result = new ArrayList<>();
