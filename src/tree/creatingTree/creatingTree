@@ -51,3 +51,53 @@ int main() {
 
     return 0;
 }
+
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+class Node {
+    public int data;
+    public Node right;
+    public Node left;
+
+    public Node(int data){
+        this.data = data;
+        right = null;
+        left = null;
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter x:  ");
+        int x = sc.nextInt();
+
+        Queue<Node> q = new LinkedList<>();
+        Node root = new Node(x);
+        q.add(root);
+
+        while(!q.isEmpty()){
+            Node temp = q.poll();
+
+            System.out.print("enter left child of " + temp.data + ": ");
+            int first = sc.nextInt();
+
+            if(first != -1){
+                temp.left = new Node(first);
+                q.add(temp.left);
+            }
+
+            System.out.print("enter right child of " + temp.data + ": ");
+            int second = sc.nextInt();
+
+            if(second != -1){
+                temp.right = new Node(second);
+                q.add(temp.right);
+            }
+        }
+
+    }
+}
