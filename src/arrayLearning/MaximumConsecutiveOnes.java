@@ -1,3 +1,4 @@
+/*
 package arrayLearning;
 
 public class MaximumConsecutiveOnes {
@@ -81,7 +82,8 @@ class Solution {
                 row++;
             }
         }
-        */
+
     }
 }
-//}
+}
+*/
